@@ -5,7 +5,7 @@
 
     <parent>
         <groupId>cn.home1</groupId>
-        <artifactId>build-site</artifactId>
+        <artifactId>build-docker</artifactId>
         <version>0.0.1.OSS-SNAPSHOT</version>
     </parent>
 
@@ -92,6 +92,28 @@
     </reporting>
 
     <profiles>
+        <profile>
+            <id>default-surefireArgLine</id>
+            <activation>
+                <property>
+                    <name>!surefireArgLine</name>
+                </property>
+            </activation>
+            <properties>
+                <surefireArgLine></surefireArgLine>
+            </properties>
+        </profile>
+        <profile>
+            <id>default-failsafeArgLine</id>
+            <activation>
+                <property>
+                    <name>!failsafeArgLine</name>
+                </property>
+            </activation>
+            <properties>
+                <failsafeArgLine></failsafeArgLine>
+            </properties>
+        </profile>
         <profile>
             <id>default-jvmArguments-addModules</id>
             <activation>
