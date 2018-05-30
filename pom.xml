@@ -10,9 +10,10 @@
     </parent>
 
     <artifactId>maven-build-java9</artifactId>
-    <description>Parent pom for maven projects that uses java 9</description>
+    <description>Parent pom for maven projects that use java 9</description>
     <name>maven-build-java9</name>
     <packaging>pom</packaging>
+    <version>0.0.1.OSS-SNAPSHOT</version>
 
     <properties>
         <java.version>9</java.version>
@@ -126,4 +127,15 @@
             </properties>
         </profile>
     </profiles>
+
+    <repositories>
+        <!-- Make artifacts in OSSRH-snapshots available -->
+        <repository>
+            <id>OSSRH-snapshots</id>
+            <name>central snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <releases><enabled>false</enabled></releases>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+    </repositories>
 </project>
