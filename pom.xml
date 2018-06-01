@@ -56,13 +56,13 @@
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
-                    <argLine>--add-modules ${jvmArguments.addModules} ${surefireArgLine}</argLine>
+                    <argLine>--add-modules ${jvmArguments.addModules} ${argLine}</argLine>
                 </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <configuration>
-                    <argLine>--add-modules ${jvmArguments.addModules} ${failsafeArgLine}</argLine>
+                    <argLine>--add-modules ${jvmArguments.addModules} ${argLine}</argLine>
                 </configuration>
             </plugin>
             <plugin>
@@ -93,28 +93,6 @@
     </reporting>
 
     <profiles>
-        <profile>
-            <id>default-surefireArgLine</id>
-            <activation>
-                <property>
-                    <name>!surefireArgLine</name>
-                </property>
-            </activation>
-            <properties>
-                <surefireArgLine></surefireArgLine>
-            </properties>
-        </profile>
-        <profile>
-            <id>default-failsafeArgLine</id>
-            <activation>
-                <property>
-                    <name>!failsafeArgLine</name>
-                </property>
-            </activation>
-            <properties>
-                <failsafeArgLine></failsafeArgLine>
-            </properties>
-        </profile>
         <profile>
             <id>default-jvmArguments-addModules</id>
             <activation>
